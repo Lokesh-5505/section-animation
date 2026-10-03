@@ -84,35 +84,46 @@
   body { margin: 0; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
 }
 
-.track-image { object-position: center center; will-change: transform; }
+.track-image { object-position: center center; will-change: transform; transform: translateZ(0); }
 .track-vignette { background: linear-gradient(90deg, color-mix(in oklab, var(--road) 69%, transparent), transparent 70%), linear-gradient(0deg, color-mix(in oklab, var(--road) 55%, transparent), transparent 38%); }
-.drive-car { will-change: transform; filter: drop-shadow(0 22px 15px color-mix(in oklab, var(--road) 75%, transparent)); }
-.drive-line, .drive-progress { will-change: transform; }
+.drive-car { will-change: transform; transform: translateZ(0); filter: drop-shadow(0 20px 22px color-mix(in oklab, var(--road) 80%, transparent)); }
+.drive-line, .drive-progress { will-change: transform; transform: translateZ(0); }
 
 @media (max-width: 767px) {
-  .hero-header { height: 58px; }
-  .hero-top { padding-top: 22px; }
-  .hero-top h1, .scene-copy--final p:first-of-type { font-size: clamp(2.75rem, 10vw, 5rem); }
-  .hero-top .intro-small { margin-bottom: 12px; }
-  .hero-top p.intro-small { margin-top: 15px; max-width: 265px; font-size: 12px; line-height: 1.45; }
-  .drive-car { width: 78vw; left: -8%; top: 39%; }
+  .hero-header { height: 56px; }
+  .hero-top { padding-top: 14px; }
+  .hero-top h1, .scene-copy--final p:first-of-type { font-size: clamp(2.2rem, 8.5vw, 4.2rem); }
+  .hero-top .intro-small { margin-bottom: 8px; }
+  .hero-top p.intro-small { margin-top: 10px; max-width: 270px; font-size: 12px; line-height: 1.4; }
+  .drive-car { width: 75vw; left: -8%; top: 48%; }
   .track-image { object-position: 62% center; }
   .track-coordinate { display: none; }
-  .hero-metric { padding: 13px 10px; }
+  .hero-metric { padding: 10px 8px; }
   .hero-metric:first-child { padding-left: 0; }
   .hero-metric:last-child { padding-right: 0; }
-  .hero-metric strong { font-size: clamp(1.35rem, 5.3vw, 2rem); }
-  .hero-metric span:last-child { font-size: 9px; line-height: 1.25; }
-  .hero-metric span:first-child { margin-bottom: 6px; font-size: 8px; }
-  .hero-body > div:last-child { padding-bottom: 16px; }
+  .hero-metric strong { font-size: clamp(1.3rem, 5vw, 1.9rem); }
+  .hero-metric span:last-child { font-size: 9px; line-height: 1.2; }
+  .hero-metric span:first-child { margin-bottom: 4px; font-size: 8px; }
+  .hero-body > div:last-child { padding-bottom: 12px; }
 }
 
-@media (max-height: 620px) {
-  .hero-top { padding-top: 16px; }
-  .hero-top h1, .scene-copy--final p:first-of-type { font-size: clamp(2.5rem, 8.5vw, 5.5rem); }
-  .hero-top p.intro-small { margin-top: 12px; }
-  .drive-car { top: 35%; }
-  .hero-metric { padding-top: 10px; padding-bottom: 10px; }
+.telemetry-hud { will-change: transform; backdrop-filter: blur(8px); }
+.car-underglow { will-change: transform, opacity; }
+.letter-interactive { transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.2s ease, text-shadow 0.2s ease; }
+.letter-interactive:hover { transform: translateY(-3px) scale(1.1); color: var(--primary) !important; text-shadow: 0 0 16px color-mix(in oklab, var(--primary) 80%, transparent); }
+
+/* Height-based responsive rules: balances larger car and sleek refined headline */
+@media (max-height: 700px) {
+  .hero-header { height: 50px; }
+  .hero-top { padding-top: 4px; }
+  .hero-top h1, .scene-copy--final p:first-of-type { font-size: clamp(1.4rem, 2.8vw, 2.6rem) !important; line-height: 0.9 !important; letter-spacing: 0.2em !important; }
+  .hero-top .intro-small { margin-bottom: 4px; }
+  .hero-top p.intro-small { margin-top: 4px; font-size: 11px; line-height: 1.35; max-width: 320px; }
+  .drive-car { width: min(52vw, 680px) !important; max-height: 210px !important; top: 43% !important; }
+  .hero-metric { padding-top: 6px !important; padding-bottom: 6px !important; }
+  .hero-metric strong { font-size: clamp(1.2rem, 2.4vw, 2rem) !important; }
+  .hero-metric span:last-child { font-size: 9px !important; line-height: 1.2 !important; }
+  .hero-footer-hint { padding-bottom: 6px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
