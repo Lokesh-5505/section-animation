@@ -15,6 +15,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -28,60 +29,53 @@
   --color-ring: var(--ring);
   --color-road: var(--road);
   --color-road-foreground: var(--road-foreground);
-  --color-road-mark: var(--road-mark);
+  --color-surface-light: var(--surface-light);
+  --color-surface-light-foreground: var(--surface-light-foreground);
   --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
 }
 
 :root {
-  --background: oklch(0.968 0.005 105);
-  --foreground: oklch(0.16 0.008 100);
-  --card: oklch(0.99 0 0);
-  --card-foreground: oklch(0.16 0.008 100);
-  --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.16 0.008 100);
-  --primary: oklch(0.82 0.2 126);
-  --primary-foreground: oklch(0.16 0.008 100);
-  --secondary: oklch(0.89 0.015 105);
-  --secondary-foreground: oklch(0.16 0.008 100);
-  --muted: oklch(0.91 0.008 105);
-  --muted-foreground: oklch(0.43 0.01 100);
-  --accent: oklch(0.69 0.13 225);
-  --accent-foreground: oklch(0.16 0.008 100);
-  --destructive: oklch(0.59 0.22 30);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.79 0.009 100);
-  --input: oklch(0.79 0.009 100);
-  --ring: oklch(0.65 0.15 126);
-  --road: oklch(0.18 0.007 105);
-  --road-foreground: oklch(0.95 0 0);
-  --road-mark: oklch(0.7 0.01 105);
+  --background: oklch(0.12 0.006 90);
+  --foreground: oklch(0.96 0.005 100);
+  --card: oklch(0.19 0.006 90);
+  --card-foreground: oklch(0.96 0.005 100);
+  --popover: oklch(0.19 0.006 90);
+  --popover-foreground: oklch(0.96 0.005 100);
+  --primary: oklch(0.86 0.21 125);
+  --primary-foreground: oklch(0.12 0.006 90);
+  --primary-dark: oklch(0.48 0.16 130);
+  --secondary: oklch(0.25 0.006 90);
+  --secondary-foreground: oklch(0.96 0.005 100);
+  --muted: oklch(0.25 0.006 90);
+  --muted-foreground: oklch(0.71 0.01 100);
+  --accent: oklch(0.68 0.15 226);
+  --accent-foreground: oklch(0.12 0.006 90);
+  --destructive: oklch(0.65 0.2 30);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.36 0.006 90);
+  --input: oklch(0.36 0.006 90);
+  --ring: oklch(0.86 0.21 125);
+  --road: oklch(0.12 0.006 90);
+  --road-foreground: oklch(0.98 0.003 90);
+  --surface-light: oklch(0.94 0.009 105);
+  --surface-light-foreground: oklch(0.18 0.008 90);
 }
 
 .dark {
-  --background: oklch(0.16 0.008 100);
-  --foreground: oklch(0.968 0.005 105);
-  --card: oklch(0.23 0.008 100);
-  --card-foreground: oklch(0.968 0.005 105);
-  --popover: oklch(0.23 0.008 100);
-  --popover-foreground: oklch(0.968 0.005 105);
-  --primary: oklch(0.82 0.2 126);
-  --primary-foreground: oklch(0.16 0.008 100);
-  --secondary: oklch(0.29 0.008 100);
-  --secondary-foreground: oklch(0.968 0.005 105);
-  --muted: oklch(0.29 0.008 100);
-  --muted-foreground: oklch(0.7 0.008 100);
-  --accent: oklch(0.69 0.13 225);
-  --accent-foreground: oklch(0.16 0.008 100);
-  --destructive: oklch(0.68 0.2 30);
-  --destructive-foreground: oklch(0.16 0.008 100);
-  --border: oklch(0.38 0.008 100);
-  --input: oklch(0.38 0.008 100);
-  --ring: oklch(0.82 0.2 126);
-  --road: oklch(0.11 0.007 105);
-  --road-foreground: oklch(0.95 0 0);
-  --road-mark: oklch(0.7 0.01 105);
+  --background: oklch(0.12 0.006 90);
+  --foreground: oklch(0.96 0.005 100);
+  --card: oklch(0.19 0.006 90);
+  --card-foreground: oklch(0.96 0.005 100);
+  --popover: oklch(0.19 0.006 90);
+  --popover-foreground: oklch(0.96 0.005 100);
+  --secondary: oklch(0.25 0.006 90);
+  --secondary-foreground: oklch(0.96 0.005 100);
+  --muted: oklch(0.25 0.006 90);
+  --muted-foreground: oklch(0.71 0.01 100);
+  --border: oklch(0.36 0.006 90);
+  --input: oklch(0.36 0.006 90);
 }
 
 @layer base {
@@ -90,26 +84,35 @@
   body { margin: 0; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
 }
 
-.road-dashes {
-  background: repeating-linear-gradient(90deg, var(--road-mark) 0 34px, transparent 34px 67px);
-  opacity: .38;
-}
-.metric-line-lime { background: var(--primary); }
-.metric-line-blue { background: var(--accent); }
-.metric-line-orange { background: oklch(0.71 0.18 51); }
-.metric-line-dark { background: var(--foreground); }
-.car-vehicle { will-change: transform; }
-.road-trail { will-change: transform; }
+.track-image { object-position: center center; will-change: transform; }
+.track-vignette { background: linear-gradient(90deg, color-mix(in oklab, var(--road) 69%, transparent), transparent 70%), linear-gradient(0deg, color-mix(in oklab, var(--road) 55%, transparent), transparent 38%); }
+.drive-car { will-change: transform; filter: drop-shadow(0 22px 15px color-mix(in oklab, var(--road) 75%, transparent)); }
+.drive-line, .drive-progress { will-change: transform; }
 
-@media (max-height: 760px) and (min-width: 640px) {
-  .hero-heading { padding-top: 1rem; }
-  .road-wrap { min-height: 200px; padding-block: .75rem; }
-  .metrics-grid { padding-bottom: 1.25rem; }
+@media (max-width: 767px) {
+  .hero-header { height: 58px; }
+  .hero-top { padding-top: 22px; }
+  .hero-top h1, .scene-copy--final p:first-of-type { font-size: clamp(2.75rem, 10vw, 5rem); }
+  .hero-top .intro-small { margin-bottom: 12px; }
+  .hero-top p.intro-small { margin-top: 15px; max-width: 265px; font-size: 12px; line-height: 1.45; }
+  .drive-car { width: 78vw; left: -8%; top: 39%; }
+  .track-image { object-position: 62% center; }
+  .track-coordinate { display: none; }
+  .hero-metric { padding: 13px 10px; }
+  .hero-metric:first-child { padding-left: 0; }
+  .hero-metric:last-child { padding-right: 0; }
+  .hero-metric strong { font-size: clamp(1.35rem, 5.3vw, 2rem); }
+  .hero-metric span:last-child { font-size: 9px; line-height: 1.25; }
+  .hero-metric span:first-child { margin-bottom: 6px; font-size: 8px; }
+  .hero-body > div:last-child { padding-bottom: 16px; }
 }
 
-@media (max-width: 639px) {
-  .scene { min-height: 92svh; }
-  .hero-heading h1 { font-size: clamp(3.1rem, 15vw, 5.4rem); }
+@media (max-height: 620px) {
+  .hero-top { padding-top: 16px; }
+  .hero-top h1, .scene-copy--final p:first-of-type { font-size: clamp(2.5rem, 8.5vw, 5.5rem); }
+  .hero-top p.intro-small { margin-top: 12px; }
+  .drive-car { top: 35%; }
+  .hero-metric { padding-top: 10px; padding-bottom: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
