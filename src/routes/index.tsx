@@ -108,7 +108,7 @@ function Index() {
 
   return (
     <main className="overflow-x-clip bg-background text-foreground">
-      <section ref={sceneRef} className="scene relative flex min-h-[100svh] flex-col overflow-hidden" aria-label="ITZFIZZ motion experience">
+      <section ref={sceneRef} className="scene relative flex min-h-[92svh] flex-col overflow-hidden" aria-label="ITZFIZZ motion experience">
         <div className="scene-inner mx-auto flex w-full max-w-[1800px] flex-1 flex-col px-5 sm:px-8 lg:px-12">
           <header className="flex h-20 shrink-0 items-center justify-between border-b border-border/70 sm:h-24">
             <a href="#top" aria-label="ITZFIZZ home" className="font-display text-[23px] font-extrabold leading-none tracking-normal sm:text-[28px]">ITZFIZZ<span className="text-primary">.</span></a>
@@ -128,7 +128,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="road-wrap relative z-0 mt-auto flex min-h-[210px] items-center py-5 sm:min-h-[260px] sm:py-8 lg:min-h-[320px] lg:py-10">
+          <div className="road-wrap relative z-0 mt-auto flex min-h-[178px] items-center py-4 sm:min-h-[260px] sm:py-8 lg:min-h-[320px] lg:py-10">
             <div ref={roadRef} className="road relative h-[144px] w-full overflow-hidden bg-road sm:h-[178px] lg:h-[214px]">
               <div className="road-edge absolute inset-x-0 top-4 border-t border-road-mark/35 sm:top-5" />
               <div className="road-edge absolute inset-x-0 bottom-4 border-t border-road-mark/35 sm:bottom-5" />
@@ -142,7 +142,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="metrics-grid grid grid-cols-2 gap-x-5 gap-y-5 pb-7 pt-3 sm:grid-cols-4 sm:gap-5 sm:pb-8 lg:gap-9 lg:pb-10">
+          <div className="metrics-grid grid grid-cols-2 gap-x-5 gap-y-3 pb-4 pt-3 sm:grid-cols-4 sm:gap-5 sm:pb-8 lg:gap-9 lg:pb-10">
             {metrics.map((metric, index) => (
               <div key={metric.number} className={`metric metric-${index} relative min-w-0 border-t border-border pt-4 sm:pt-5`}>
                 <div className={`metric-line metric-line-${metric.color} absolute left-0 top-[-1px] h-[3px] w-full origin-left scale-x-0`} />
